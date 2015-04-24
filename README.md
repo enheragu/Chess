@@ -7,8 +7,8 @@ We codificate the chessboard in a 10x12 matrix whose cells will contain and inte
 		0			Empty cell  	  	   0
 		1			Non moved pawn		  -1
 		2			Moved pawn      	  -2   (2 cells	forward)
-		3			Knights			  -3
-		4			Bishops			  -4
+		3			Knights				  -3
+		4			Bishops			  	-4
 		5			Non moved rooks		  -5
 		6			Moved rooks 		  -6
 		7			Queen			  -7
