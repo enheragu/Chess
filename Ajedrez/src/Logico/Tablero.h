@@ -14,9 +14,10 @@ class Tablero
 		7			Dama					-7
 		8			Rey no movida			-8
 		9			Rey movido				-9
+		255			Casilla prohibida		255
 
 	*/
-//Representación de la posición de las piezas de cada jugador
+//RepresentaciÃ³n de la posiciÃ³n de las piezas de cada jugador
 	int tablero[8][8];
 
 public:
