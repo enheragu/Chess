@@ -11,9 +11,9 @@ We codificate the chessboard in a 10x12 matrix whose cells will contain and inte
 		4			Bishops			  	  -4
 		5			Non moved rooks		  -5
 		6			Moved rooks 		  -6
-		7			Queen			  		-7
+		7			Queen			  	    -7
 		8			Non moved king		  -8
-		9			Moved king		  		-9
+		9			Moved king		  	    -9
 		255   			Restricted cell 	255
 
 	
