@@ -14,7 +14,7 @@ We codificate the chessboard in a 10x12 matrix whose cells will contain and inte
 		7			Queen			  	  -7
 		8			Non moved king		  -8
 		9			Moved king		  	  -9
-		255   			Restricted cell 	255
+		255   		Restricted cell 	255
 
 	
 (There are some of the pieces wich are codificated with two numbers, this happends to allow some special moves as Castling, En passant, etc.)
