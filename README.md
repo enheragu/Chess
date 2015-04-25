@@ -20,4 +20,6 @@ We codificate the chessboard in a 10x12 matrix whose cells will contain and inte
 (There are some of the pieces wich are codificated with two numbers, this happends to allow some special moves as Castling, En passant, etc.)
 	
 We are sorry because the project itself is written in spanish as it is for UPM (Universidad Politecnica de Madrid). Anyway we hope anyone can understand the code.
+
+Note: As it is a group project we are updating the code constantly, sometimes the changes are quite insignificant.
 	
