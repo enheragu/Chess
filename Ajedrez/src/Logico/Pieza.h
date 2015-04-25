@@ -1,13 +1,15 @@
 #pragma once
 
-#include "Situacion.h"
+#include "Tablero.h"
 
-enum jugador{A, B};
-enum pieza {CABALLO=0, REINA, REY, TORRE, PEON, ALFIL};
+enum jugador {BLANCAS=0, NEGRAS};
+enum pieza {C_VACIA=0, PEON_SIN_MOVER, PEON_MOVIDO, CABALLO, ALFIL, TORRE_NO_MOVIDA, TORRE_MOVIDA, DAMA, REY_NO_MOVIDO, REY_MOVIDO};
+
 struct casilla{
 	int x;
 	int y;
 };
+
  struct jugada{
 	 casilla origen;
 	 casilla destino;
@@ -17,11 +19,12 @@ struct casilla{
 class Pieza
 {
 	int tipo;
-	int casilla;
-	Situacion* s;
-public:
+	casilla casillaActual;
+	Tablero* s;
 
-	Pieza(void);
+public:
+	
+	Pieza(int x, int y, int t);
 	~Pieza(void);
 
 	jugada* generador();

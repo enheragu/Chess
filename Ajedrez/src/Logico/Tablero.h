@@ -16,7 +16,7 @@ class Tablero
 		9			Rey movido				-9
 	   255			Casilla Prohibida       255
 	*/
-//RepresentaciÃ³n de la posiciÃ³n de las piezas de cada jugador
+//Representación de la posición de las piezas de cada jugador
 	int tablero[10][12];
 
 public:

@@ -7,7 +7,7 @@
 class Caballo : public Pieza
 {
 public:
-	Caballo(void);
+	Caballo(int x, int y, int t);
 	~Caballo(void);
 	//restricciones de movimiento
 	void mueveCaballo (void);

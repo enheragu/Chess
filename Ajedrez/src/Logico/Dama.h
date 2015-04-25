@@ -7,7 +7,7 @@
 class Dama : public Pieza
 {
 public:
-	Dama(void);
+	Dama(int x, int y, int t);
 	~Dama(void);
 	//restricciones de movimiento
 	void mueveDama (void);

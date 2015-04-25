@@ -9,7 +9,7 @@ class Peon : public Pieza
 	bool movido2casillas;
 
 public:
-	Peon(void);
+	Peon(int x, int y, int t);
 	~Peon(void);
 	//restricciones de movimiento
 	void muevePeon (void);

@@ -1,7 +1,7 @@
 #include "Peon.h"
 
 
-Peon::Peon(void)
+Peon::Peon(int x, int y, int t) : Pieza (x,y,t)
 {
 }
 

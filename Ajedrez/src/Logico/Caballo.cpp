@@ -1,7 +1,7 @@
 #include "Caballo.h"
 
 
-Caballo::Caballo(void)
+Caballo::Caballo(int x, int y, int t) : Pieza (x,y,t)
 {
 }
 

@@ -9,7 +9,7 @@ class Alfil : public Pieza
 
 
 public:
-	Alfil(void);
+	Alfil(int x, int y, int t);
 	~Alfil(void);
 	//restricciones de movimiento
 	void mueveAlfil (void);

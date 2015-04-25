@@ -2,9 +2,11 @@
 
 
 
-Pieza::Pieza(void)
+Pieza::Pieza(int x, int y, int t)
 {
-
+	casillaActual.x = x;
+	casillaActual.y = y;
+	tipo = t;
 }
 
 

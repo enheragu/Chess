@@ -9,7 +9,7 @@ class Torre : public Pieza
 	bool movido;
 
 public:
-	Torre(void);
+	Torre(int x, int y, int t);
 	~Torre(void);
 	//restricciones de movimiento
 	void mueveTorre (void);

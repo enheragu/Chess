@@ -1,7 +1,7 @@
 #include "Dama.h"
 
 
-Dama::Dama(void)
+Dama::Dama(int x, int y, int t) : Pieza (x,y,t)
 {
 }
 

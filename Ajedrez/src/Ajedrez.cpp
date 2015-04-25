@@ -61,7 +61,7 @@ void OnDraw(void)
 }
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
-	//poner aqui el cÃ³digo de teclado
+	//poner aqui el código de teclado
 
 
 	glutPostRedisplay();
@@ -69,7 +69,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 
 void OnTimer(int value)
 {
-//poner aqui el cÃ³digo de animacion
+//poner aqui el código de animacion
 
 
 	//no borrar estas lineas
