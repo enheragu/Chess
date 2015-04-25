@@ -1,4 +1,5 @@
-#include "logico\Situacion.h"
+#include "Logico\Tablero.h"
+#include "Grafico\Grafico.h"
 
 #include <stdio.h>
 #include <iostream>
@@ -12,6 +13,8 @@ using namespace std;
 void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
+
+Grafico graficosAjedrez;
 
 int main(int argc,char* argv[])
 {
@@ -35,7 +38,6 @@ int main(int argc,char* argv[])
 	glutTimerFunc(25,OnTimer,0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
 	glutKeyboardFunc(OnKeyboardDown);
 
-
 		
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();	
@@ -52,13 +54,14 @@ void OnDraw(void)
 	glMatrixMode(GL_MODELVIEW);	
 	glLoadIdentity();
 
+	graficosAjedrez.inicializaTablero();
 
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
 }
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
-	//poner aqui el código de teclado
+	//poner aqui el cÃ³digo de teclado
 
 
 	glutPostRedisplay();
@@ -66,7 +69,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 
 void OnTimer(int value)
 {
-//poner aqui el código de animacion
+//poner aqui el cÃ³digo de animacion
 
 
 	//no borrar estas lineas
