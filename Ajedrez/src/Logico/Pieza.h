@@ -23,8 +23,8 @@ class Pieza
 	Tablero* s;
 
 public:
-
-	Pieza(void);
+	
+	Pieza(int x, int y, int t);
 	~Pieza(void);
 
 	jugada* generador();
