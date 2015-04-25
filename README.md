@@ -24,4 +24,6 @@ We codificate the chessboard in a 10x12 matrix whose cells will contain and inte
 We use openGl to produce the graphics (glut.h library). Our intention is to separate the logic part of the game from the graphics so it is easy to change the graphic interface from ours to another.
 	
 We are sorry because the project itself is written in spanish as it is for UPM (Universidad Politecnica de Madrid). Anyway we hope anyone can understand the code.
+
+As it is a group project we are updating the code constantly, sometimes the changes are quite insignificant.
 	
