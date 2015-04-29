@@ -1,3 +1,4 @@
+
 // Clase derivada Pieza:
 
 #pragma once

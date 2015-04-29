@@ -2,6 +2,7 @@
 
 class Tablero
 {
+public:
 	/*
 	 Blancas			Pieza			  Negras
 		0			Casilla vacia			0
@@ -16,11 +17,10 @@ class Tablero
 		9			Rey movido				-9
 	   255			Casilla Prohibida       255
 	*/
+
 //Representación de la posición de las piezas de cada jugador
 	int tablero[10][12];
 
-public:
 	Tablero(void);
 	~Tablero(void);
-
 };

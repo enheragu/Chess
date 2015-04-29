@@ -6,10 +6,9 @@
 
 class Rey : public Pieza
 {
-	bool movido;
 
 public:
-	Rey(int x, int y, int t);
+	Rey( int t, int x, int y);
 	~Rey(void);
 	//restricciones de movimiento
 	void mueveRey (void);

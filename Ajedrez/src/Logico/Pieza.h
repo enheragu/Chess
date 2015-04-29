@@ -18,15 +18,19 @@ struct casilla{
 
 class Pieza
 {
+protected:
 	int tipo;
 	casilla casillaActual;
 	Tablero* s;
 
+	static int numJugadas;
+
 public:
 	
-	Pieza(int x, int y, int t);
+	Pieza(int t, int x, int y);
 	~Pieza(void);
 
 	jugada* generador();
+	void escribirPosicion(int id);
 };
 

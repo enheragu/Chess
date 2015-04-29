@@ -6,7 +6,6 @@
 
 class Torre : public Pieza
 {
-	bool movido;
 
 public:
 	Torre(int x, int y, int t);

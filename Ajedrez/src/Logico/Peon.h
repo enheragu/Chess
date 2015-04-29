@@ -6,8 +6,7 @@
 
 class Peon : public Pieza
 {
-	bool movido2casillas;
-
+	
 public:
 	Peon(int x, int y, int t);
 	~Peon(void);
