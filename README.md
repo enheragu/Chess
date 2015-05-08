@@ -22,4 +22,6 @@ We codificate the chessboard in a 10x12 matrix whose cells will contain and inte
 We are sorry because the project itself is written in spanish as it is for UPM (Universidad Politecnica de Madrid). Anyway we hope anyone can understand the code.
 
 Note: As it is a group project we are updating the code constantly, sometimes the changes are quite insignificant.
+
+Work done by Enrique Heredia Aguado and Pilar López Ruescas
 	
