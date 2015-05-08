@@ -1,7 +1,7 @@
 #include "Alfil.h"
 
 
-Alfil::Alfil(int x, int y, int t) : Pieza (x,y,t) {}
+Alfil::Alfil(int x, int y, int color) : Pieza (x,y,ALFIL,color) {}
 
 
 Alfil::~Alfil(void)

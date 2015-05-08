@@ -8,10 +8,10 @@ class Peon : public Pieza
 {
 	
 public:
-	Peon(int x, int y, int t);
+	Peon(int x, int y, int color);
 	~Peon(void);
 	//restricciones de movimiento
-	void muevePeon (void);
+	void muevePeon (struct jugada*);
 	void comePeon (void);
 };
 

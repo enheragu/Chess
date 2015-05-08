@@ -1,7 +1,7 @@
 #include "Rey.h"
 
 
-Rey::Rey(int x, int y, int t) : Pieza (x,y,t) {}
+Rey::Rey(int x, int y, int color) : Pieza (x,y,REY_NO_MOVIDO,color) {}
 
 
 

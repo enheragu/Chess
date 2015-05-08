@@ -8,10 +8,10 @@ class Rey : public Pieza
 {
 
 public:
-	Rey( int t, int x, int y);
+	Rey(int x, int y, int color);
 	~Rey(void);
 	//restricciones de movimiento
-	void mueveRey (void);
+	void mueveRey (struct jugada*);
 	void comeRey (void);
 	void enrocar (bool movido);
 };

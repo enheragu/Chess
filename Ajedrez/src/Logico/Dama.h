@@ -7,10 +7,10 @@
 class Dama : public Pieza
 {
 public:
-	Dama(int x, int y, int t);
+	Dama(int x, int y, int color);
 	~Dama(void);
 	//restricciones de movimiento
-	void mueveDama (void);
+	void mueveDama (struct jugada*);
 	void comeDama (void);
 };
 

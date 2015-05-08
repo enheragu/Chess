@@ -10,10 +10,10 @@ class Alfil : public Pieza
 
 
 public:
-	Alfil(int x, int y, int t);
+	Alfil(int x, int y, int color);
 	~Alfil(void);
 	//restricciones de movimiento
-	void mueveAlfil (void);
+	void mueveAlfil (struct jugada*);
 	void comeAlfil (void);
 };
 

@@ -7,10 +7,10 @@
 class Caballo : public Pieza
 {
 public:
-	Caballo(int x, int y, int t);
+	Caballo(int x, int y, int color);
 	~Caballo(void);
 	//restricciones de movimiento
-	void mueveCaballo (void);
+	void mueveCaballo (struct jugada*);
 	void comeCaballo (void);
 };
 
