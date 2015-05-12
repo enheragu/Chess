@@ -20,8 +20,8 @@ Jugador::Jugador(int color)
 			caballos[i] = new Caballo ((i+3)*(8/4),1,BLANCAS);
 			//caballos en 1 y en 6, contando con las 2 columnas prohibidas
 
-		rey = new Rey (4,0,BLANCAS);
-		dama = new Dama (3,0,BLANCAS);
+		rey = new Rey (6,1,BLANCAS);
+		dama = new Dama (5,1,BLANCAS);
 	}
 	else if (color==NEGRAS)
 	{
@@ -37,8 +37,8 @@ Jugador::Jugador(int color)
 		for (int i=0; i<2; i++)
 			caballos[i] = new Caballo ((i+3)*(8/4),8,NEGRAS);
 
-		rey = new Rey (4,7,NEGRAS);
-		dama = new Dama (3,7,NEGRAS);
+		rey = new Rey (6,8,NEGRAS);
+		dama = new Dama (5,8,NEGRAS);
 	}
 
 }
