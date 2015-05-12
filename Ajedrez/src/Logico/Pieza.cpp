@@ -72,10 +72,10 @@ void Pieza::moverPieza (struct jugada* jugada)
 			Rey.moverPieza(jugada);
 			break;
 		case C_VACIA: 
-			//devuelve mensaje de error por pantalla
+			//devuelve mensaje de error "casilla vacia" por pantalla
 			break;
 		case C_PROHIBIDA: 
-			//devuelve mensaje de error por pantalla
+			//devuelve mensaje de error "casilla no valida" por pantalla
 			break;
 	}
 }
