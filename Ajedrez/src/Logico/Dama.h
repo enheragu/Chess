@@ -10,7 +10,7 @@ public:
 	Dama(int x, int y, int color);
 	~Dama(void);
 	//restricciones de movimiento
-	void mueveDama (struct jugada*);
+	virtual void moverPieza (struct jugada*);
 	void comeDama (void);
 };
 

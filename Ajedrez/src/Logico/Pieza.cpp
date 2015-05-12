@@ -4,7 +4,7 @@
 int numJugadasBlancas = 0;
 int numJugadasNegras = 0;
 
-Pieza::Pieza(int t, int x, int y, int color)
+Pieza::Pieza(int x, int y, int t, int color)
 {
 	jugadaPieza.origen.x = x;
 	jugadaPieza.origen.y = y;
@@ -37,7 +37,7 @@ void Pieza::pedirDestino (int x, int y)
 
 }
 
-void Pieza::moverFicha (struct jugada* jugada)
+void Pieza::moverPieza (struct jugada* jugada)
 {
 	int pieza;
 	pieza = abs(leerCasilla (jugada));
@@ -45,31 +45,31 @@ void Pieza::moverFicha (struct jugada* jugada)
 	switch (pieza)
 	{
 		case PEON_SIN_MOVER: 
-			Peon::muevePeon(jugada);
+			Peon.moverPieza(jugada);
 			break;
 		case PEON_MOVIDO: 
-			Peon::muevePeon(jugada);
+			Peon.moverPieza(jugada);
 			break;
 		case CABALLO: 
-			Caballo::mueveCaballo(jugada);
+			Caballo.moverPieza(jugada);
 			break;
 		case ALFIL: 
-			Alfil::mueveAlfil(jugada);
+			Alfil.moverPieza(jugada);
 			break;
 		case TORRE_NO_MOVIDA: 
-			Torre::mueveTorre(jugada);
+			Torre.moverPieza(jugada);
 			break;
 		case TORRE_MOVIDA: 
-			Torre::mueveTorre(jugada);
+			Torre.moverPieza(jugada);
 			break;
 		case DAMA: 
-			Dama::mueveDama(jugada);
+			Dama.moverPieza(jugada);
 			break;
 		case REY_NO_MOVIDO: 
-			Rey::mueveRey(jugada);
+			Rey.moverPieza(jugada);
 			break;
 		case REY_MOVIDO: 
-			Rey::mueveRey(jugada);
+			Rey.moverPieza(jugada);
 			break;
 		case C_VACIA: 
 			//devuelve mensaje de error por pantalla

@@ -11,7 +11,7 @@ public:
 	Torre(int x, int y, int color);
 	~Torre(void);
 	//restricciones de movimiento
-	void mueveTorre (struct jugada*);
+	virtual void moverPieza (struct jugada*);
 	void comeTorre (void);
 };
 

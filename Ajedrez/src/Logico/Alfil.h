@@ -13,7 +13,7 @@ public:
 	Alfil(int x, int y, int color);
 	~Alfil(void);
 	//restricciones de movimiento
-	void mueveAlfil (struct jugada*);
+	virtual void moverPieza (struct jugada*);
 	void comeAlfil (void);
 };
 

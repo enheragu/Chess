@@ -11,7 +11,7 @@ public:
 	Rey(int x, int y, int color);
 	~Rey(void);
 	//restricciones de movimiento
-	void mueveRey (struct jugada*);
+	virtual void moverPieza (struct jugada*);
 	void comeRey (void);
 	void enrocar (bool movido);
 };

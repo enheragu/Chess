@@ -26,7 +26,7 @@ protected:
 
 public:
 	
-	Pieza(int t, int x, int y, int color);
+	Pieza(int x, int y, int t, int color);
 	~Pieza(void);
 
 	jugada* generador();
@@ -38,6 +38,6 @@ public:
 	void pedirDestino (int x, int y);
 	//se le pasa la casilla de la pieza que queremos mover, lee 
 	//la casilla y llama a la pieza correspondiente
-	void moverFicha (struct jugada *);
+	virtual void moverPieza (struct jugada *);
 };
 

@@ -21,6 +21,8 @@ public:
 //Representación de la posición de las piezas de cada jugador
 	int tablero[10][12];
 
+
+
 	Tablero(void);
 	~Tablero(void);
 };
