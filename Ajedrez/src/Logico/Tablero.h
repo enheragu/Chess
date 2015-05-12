@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Jugador.h"
+
 class Tablero
 {
 public:
@@ -21,7 +23,7 @@ public:
 //Representación de la posición de las piezas de cada jugador
 	int tablero[10][12];
 
-
+	Jugador Blanca, Negra;
 
 	Tablero(void);
 	~Tablero(void);

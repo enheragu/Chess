@@ -11,15 +11,17 @@
 class Jugador
 {
 public:
+	//1 blancas, -1 negras
+	int color;
 
-	Peon peones[8];
-	Torre torres[2];
-	Alfil alfiles[2];
-	Caballo caballos[2];
-	Rey rey;
-	Dama dama;
+	Peon *peones[8];
+	Torre *torres[2];
+	Alfil *alfiles[2];
+	Caballo *caballos[2];
+	Rey *rey;
+	Dama *dama;
 
-	Jugador(void);
-	~Jugador(void);
+	Jugador(int color);
+	virtual ~Jugador(void);
 };
 

@@ -10,6 +10,9 @@ Tablero::Tablero(void)
 			tablero[i][j] = tabAux[i][j];
 		}
 	}
+
+	Blanca (BLANCAS);
+	Negra (NEGRAS);
 } 
 
 Tablero::~Tablero(void)

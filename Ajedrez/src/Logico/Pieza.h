@@ -2,8 +2,9 @@
 
 #include "Tablero.h"
 
-enum jugador {BLANCAS=0, NEGRAS};
+enum jugador {BLANCAS=1, NEGRAS=-1};
 enum pieza {C_VACIA=0, PEON_SIN_MOVER, PEON_MOVIDO, CABALLO, ALFIL, TORRE_NO_MOVIDA, TORRE_MOVIDA, DAMA, REY_NO_MOVIDO, REY_MOVIDO, C_PROHIBIDA=255};
+enum posicion {A=0, B, C, D, E, F, G, H};
 
 struct casilla{
 	int x;
