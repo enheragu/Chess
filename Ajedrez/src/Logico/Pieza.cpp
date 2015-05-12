@@ -79,3 +79,11 @@ void Pieza::moverPieza (struct jugada* jugada)
 			break;
 	}
 }
+
+bool Pieza::evaluarMovimiento (struct jugada * jugada)
+{
+	if (leerCasilla (jugada)==(-color)||leerCasilla (jugada)==0)
+		return true;
+	else if (leerCasilla (jugada)==color||leerCasilla (jugada)==255)
+		return false;
+}

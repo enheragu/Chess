@@ -23,7 +23,7 @@ public:
 //Representación de la posición de las piezas de cada jugador
 	int tablero[10][12];
 
-	Jugador Blanca, Negra;
+	Jugador *blancas, *negras;
 
 	Tablero(void);
 	~Tablero(void);

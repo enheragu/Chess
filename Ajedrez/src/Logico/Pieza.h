@@ -37,8 +37,10 @@ public:
 	//lee la casilla del tablero y devuelve que hay en ella
 	int leerCasilla (struct jugada *);
 	void pedirDestino (int x, int y);
+
 	//se le pasa la casilla de la pieza que queremos mover, lee 
-	//la casilla y llama a la pieza correspondiente
+	//la casilla y llama a la pieza correspondiente para que se mueva
 	virtual void moverPieza (struct jugada *);
+	bool evaluarMovimiento (struct jugada *);
 };
 

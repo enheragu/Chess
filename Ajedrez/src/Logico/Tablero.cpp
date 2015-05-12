@@ -11,10 +11,12 @@ Tablero::Tablero(void)
 		}
 	}
 
-	Blanca (BLANCAS);
-	Negra (NEGRAS);
+	blancas = new Jugador (BLANCAS);
+	negras = new Jugador (NEGRAS);
 } 
 
 Tablero::~Tablero(void)
 {
+	delete blancas;
+	delete negras;
 }
