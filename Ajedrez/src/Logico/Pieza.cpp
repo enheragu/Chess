@@ -15,8 +15,8 @@ bool Pieza::mover (struct jugada * jugada)
 {
 	int piezaDestino = LogicaAjedrez::leerCasilla (&(*jugada).destino);
 
-	//si en destino no hay pieza, o hay pieza enemiga, sobreescribe y coloca la propia pieza
-	if (piezaDestino == 0 || piezaDestino/piezaDestino != LogicaAjedrez::getTurno()) 
+	//si en destino no hay pieza, o hay pieza enemiga, Y no hay colision sobreescribe y coloca la propia pieza
+	if ((piezaDestino == 0 || ((piezaDestino/piezaDestino) != LogicaAjedrez::getTurno())) && (comprobarColision(&(*jugada)))) 
 	{
 		sobreescribirPosicion (&(*jugada));
 		return 1;
