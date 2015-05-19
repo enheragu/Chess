@@ -1,7 +1,7 @@
 # Chess
 This is still work in progress. Our intention is to create a two player Chess programmed in C++ (POO structure) without using bitmaps. Our code is based in Shannon codification proposal (extended with "error" cells). This work is for an university project
 
-We codificate the chessboard in a 10x12 matrix whose cells will contain and integer variable (int) wich codificates what is it that cell. 
+We codificate the chessboard in a 8x8 matrix whose cells will contain and integer variable (int) wich codificates what is contained in that cell. 
 
 	     Blancas			   Pieza		Negras
 		0			Empty cell  	  	   0
@@ -14,7 +14,6 @@ We codificate the chessboard in a 10x12 matrix whose cells will contain and inte
 		7			Queen			  	  -7
 		8			Non moved king		  -8
 		9			Moved king		  	  -9
-		255   		Restricted cell  	  255
 
 	
 (There are some of the pieces wich are codificated with two numbers, this happends to allow some special moves as Castling, En passant, etc.)
