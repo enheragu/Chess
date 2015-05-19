@@ -1,10 +1,11 @@
 #pragma once
 
-#include "Jugador.h"
-
 class Tablero
 {
 public:
+	Tablero(void);
+	virtual ~Tablero(void);
+
 	/*
 	 Blancas			Pieza			  Negras
 		0			Casilla vacia			0
@@ -17,14 +18,9 @@ public:
 		7			Dama					-7
 		8			Rey no movida			-8
 		9			Rey movido				-9
-	   255			Casilla Prohibida       255
 	*/
 
 //Representación de la posición de las piezas de cada jugador
-	int tablero[10][12];
-
-	Jugador *blancas, *negras;
-
-	Tablero(void);
-	~Tablero(void);
+	int tablero[8][8];
 };
+

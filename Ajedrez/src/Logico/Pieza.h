@@ -1,46 +1,45 @@
 #pragma once
 
 #include "Tablero.h"
+#include "Alfil.h"
+#include "Caballo.h"
+#include "Dama.h"
+#include "Peon.h"
+#include "Rey.h"
+#include "Torre.h"
+#include "PeonMovido2.h"
+#include "ReyMovido.h"
+#include "LogicaAjedrez.h"
+#include "Comun\Casilla.h"
+
 
 enum jugador {BLANCAS=1, NEGRAS=-1};
-enum pieza {C_VACIA=0, PEON_SIN_MOVER, PEON_MOVIDO, CABALLO, ALFIL, TORRE_NO_MOVIDA, TORRE_MOVIDA, DAMA, REY_NO_MOVIDO, REY_MOVIDO, C_PROHIBIDA=255};
-enum posicion {A=0, B, C, D, E, F, G, H};
+enum pieza {C_VACIA=0, PEON_SIN_MOVER, PEON_MOVIDO, CABALLO, ALFIL, TORRE_NO_MOVIDA, TORRE_MOVIDA, DAMA, REY_NO_MOVIDO, REY_MOVIDO};
+enum coordenada_horizontal {A=0, B, C, D, E, F, G, H};
 
-struct casilla{
-	int x;
-	int y;
-};
+
 
  struct jugada{
-	 casilla origen;
-	 casilla destino;
+	 Casilla origen;
+	 Casilla destino;
  };
+
 
 class Pieza
 {
-protected:
-	int tipo;
+public:
+	Pieza(void);
+	virtual ~Pieza(void);
+	/* devuelve un 1 si permite e movimiento y un 0 si no se permite,
+	evalua  la pieza en destino para ver si mueve o no*/
+	virtual bool mover (struct jugada *);
+	void sobreescribirPosicion (struct jugada  *);
+	//devuelve un 1 si no hay colision y un 0 si hay alguna pieza
+	bool comprobarColision (struct jugada *);
+	virtual int setTipo (int turno);
+
 	jugada jugadaPieza;
 	Tablero* punteroTablero;
-	int color; //1 blancas, -1 negras
 	static int numJugadas;
-
-public:
-	
-	Pieza(int x, int y, int t, int color);
-	~Pieza(void);
-
-	jugada* generador();
-	//escribe la pieza en el tablero se le
-	//pasa la posicion final de la pieza y la inicial
-	void escribirPosicion(struct jugada *);
-	//lee la casilla del tablero y devuelve que hay en ella
-	int leerCasilla (struct jugada *);
-	void pedirDestino (int x, int y);
-
-	//se le pasa la casilla de la pieza que queremos mover, lee 
-	//la casilla y llama a la pieza correspondiente para que se mueva
-	virtual void moverPieza (struct jugada *);
-	bool evaluarMovimiento (struct jugada *);
 };
 

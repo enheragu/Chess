@@ -1,10 +1,17 @@
 #include "Rey.h"
 
 
-Rey::Rey(int x, int y, int color) : Pieza (x,y,REY_NO_MOVIDO,color) {}
-
+Rey::Rey(void)
+{
+}
 
 
 Rey::~Rey(void)
 {
+}
+
+int Rey::setTipo (int turno)
+{
+	//set tipo se utiliza para sobreescribir posicion, si se usa significa que se mueve el rey
+	return REY_MOVIDO*turno;
 }

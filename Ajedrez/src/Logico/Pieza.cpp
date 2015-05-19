@@ -1,14 +1,9 @@
 #include "Pieza.h"
-#include <math.h>
 
-int numJugadasBlancas = 0;
-int numJugadasNegras = 0;
 
-Pieza::Pieza(int x, int y, int t, int color)
+Pieza::Pieza(void)
 {
-	jugadaPieza.origen.x = x;
-	jugadaPieza.origen.y = y;
-	tipo = t*color;
+	punteroTablero = &LogicaAjedrez::tableroAjedrez;
 }
 
 
@@ -16,74 +11,46 @@ Pieza::~Pieza(void)
 {
 }
 
-void Pieza::escribirPosicion(struct jugada* jugadaActual)
+bool Pieza::mover (struct jugada * jugada)
 {
-	(*punteroTablero).tablero[(*jugadaActual).destino.x][(*jugadaActual).destino.y] = tipo;
-	(*punteroTablero).tablero[(*jugadaActual).origen.x][(*jugadaActual).origen.y]=0;
-	
-	//se copia el destino a la casilla origen y la casilla destino se resetea
-	(*jugadaActual).origen.x = (*jugadaActual).destino.x;
-	(*jugadaActual).origen.y = (*jugadaActual).destino.y;
-	(*jugadaActual).destino.x = (*jugadaActual).destino.y = 0;
-}
+	int piezaDestino = LogicaAjedrez::leerCasilla (&(*jugada).destino);
 
-int Pieza::leerCasilla (struct jugada* jugada)
-{
-	return (*punteroTablero).tablero[(*jugada).destino.x][(*jugada).destino.y];
-}
-
-void Pieza::pedirDestino (int x, int y) 
-{
-
-}
-
-void Pieza::moverPieza (struct jugada* jugada)
-{
-	int pieza;
-	pieza = abs(leerCasilla (jugada));
-
-	switch (pieza)
+	//si en destino no hay pieza, o hay pieza enemiga, sobreescribe y coloca la propia pieza
+	if (piezaDestino == 0 || piezaDestino/piezaDestino != LogicaAjedrez::getTurno()) 
 	{
-		case PEON_SIN_MOVER: 
-			Peon.moverPieza(jugada);
-			break;
-		case PEON_MOVIDO: 
-			Peon.moverPieza(jugada);
-			break;
-		case CABALLO: 
-			Caballo.moverPieza(jugada);
-			break;
-		case ALFIL: 
-			Alfil.moverPieza(jugada);
-			break;
-		case TORRE_NO_MOVIDA: 
-			Torre.moverPieza(jugada);
-			break;
-		case TORRE_MOVIDA: 
-			Torre.moverPieza(jugada);
-			break;
-		case DAMA: 
-			Dama.moverPieza(jugada);
-			break;
-		case REY_NO_MOVIDO: 
-			Rey.moverPieza(jugada);
-			break;
-		case REY_MOVIDO: 
-			Rey.moverPieza(jugada);
-			break;
-		case C_VACIA: 
-			//devuelve mensaje de error "casilla vacia" por pantalla
-			break;
-		case C_PROHIBIDA: 
-			//devuelve mensaje de error "casilla no valida" por pantalla
-			break;
+		sobreescribirPosicion (&(*jugada));
+		return 1;
 	}
+
+	//movimiento no permitido
+	else return 0;
+		
 }
 
-bool Pieza::evaluarMovimiento (struct jugada * jugada)
+void Pieza::sobreescribirPosicion (struct jugada * jugadaActual)
 {
-	if (leerCasilla (jugada)==(-color)||leerCasilla (jugada)==0)
-		return true;
-	else if (leerCasilla (jugada)==color||leerCasilla (jugada)==255)
-		return false;
+	(*punteroTablero).tablero[(*jugadaActual).destino.x][(*jugadaActual).destino.y] = (*this).setTipo(LogicaAjedrez::getTurno());
+	(*punteroTablero).tablero[(*jugadaActual).origen.x][(*jugadaActual).origen.y]=0;
 }
+
+bool Pieza::comprobarColision (struct jugada * jugadaActual)
+{
+	int piezaCasilla;
+	Casilla aux, aux2;
+	aux = (*jugadaActual).destino - (*jugadaActual).origen;
+	aux2 = aux.unitario();
+	//hay que recorrer la trayectoria desde origen hasta destino
+	//El destino no se evalua, ya que se evalua al mover
+	while (aux != (*jugadaActual).destino) 
+	{
+		int index=1;
+		aux = (*jugadaActual).origen + aux2*index;
+		piezaCasilla = LogicaAjedrez::leerCasilla (&aux);
+		if (piezaCasilla != 0)
+			return 0;
+		index++;
+	}
+	return 1;
+}
+
+

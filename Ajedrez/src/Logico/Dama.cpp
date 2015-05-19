@@ -1,9 +1,16 @@
 #include "Dama.h"
 
 
-Dama::Dama(int x, int y, int color) : Pieza (x,y,DAMA,color) {}
+Dama::Dama(void)
+{
+}
 
 
 Dama::~Dama(void)
 {
+}
+
+int Dama::setTipo (int turno)
+{
+	return DAMA*turno;
 }

@@ -1,19 +1,14 @@
-// Clase derivada Pieza:
-
 #pragma once
 
 #include "Pieza.h"
 
-class Peon : public Pieza
+class Peon : public PeonMovido2
 {
-	
 public:
-	Peon(int x, int y, int color);
-	~Peon(void);
-	//restricciones de movimiento
-	virtual void moverPieza (struct jugada*);
-	void comePeon (void);
+	Peon(void);
+	virtual ~Peon(void);
+	
+	bool mover (struct jugada*);
+	int setTipo (int turno);
 };
-
-
 

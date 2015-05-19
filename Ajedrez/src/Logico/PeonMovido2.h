@@ -2,11 +2,11 @@
 
 #include "Pieza.h"
 
-class Rey : public ReyMovido
+class PeonMovido2 : public Pieza
 {
 public:
-	Rey(void);
-	virtual ~Rey(void);
+	PeonMovido2(void);
+	~PeonMovido2(void);
 
 	bool mover (struct jugada*);
 	int setTipo (int turno);
