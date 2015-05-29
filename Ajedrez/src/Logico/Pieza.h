@@ -1,22 +1,11 @@
 #pragma once
 
-#include "Tablero.h"
-#include "Alfil.h"
-#include "Caballo.h"
-#include "Dama.h"
-#include "Peon.h"
-#include "Rey.h"
-#include "Torre.h"
-#include "PeonMovido2.h"
-#include "ReyMovido.h"
 #include "LogicaAjedrez.h"
 #include "Comun\Casilla.h"
-
 
 enum jugador {BLANCAS=1, NEGRAS=-1};
 enum pieza {C_VACIA=0, PEON_SIN_MOVER, PEON_MOVIDO, CABALLO, ALFIL, TORRE_NO_MOVIDA, TORRE_MOVIDA, DAMA, REY_NO_MOVIDO, REY_MOVIDO};
 enum coordenada_horizontal {A=0, B, C, D, E, F, G, H};
-
 
 
  struct jugada{
@@ -41,5 +30,10 @@ public:
 	jugada jugadaPieza;
 	Tablero* punteroTablero;
 	static int numJugadas;
+
+	int leerCasilla(struct Casilla *);
+	int Pieza::getTurno();
+
+	static Tablero * punteroTablero;
 };
 

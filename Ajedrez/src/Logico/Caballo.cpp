@@ -17,7 +17,7 @@ int Caballo::setTipo (int turno)
 
 bool Caballo::mover (struct jugada * jugadaActual)
 {
-	int error;
+	bool error;
 	/*
 	==== Restriccion propia de cada pieza ====
 	*/

@@ -18,7 +18,7 @@ int Torre::setTipo (int turno)
 
 bool Torre::mover (struct jugada * jugadaActual)
 {
-	int error=0;
+	bool error=0;
 
 	Casilla aux =  (*jugadaActual).destino - (*jugadaActual).origen;
 

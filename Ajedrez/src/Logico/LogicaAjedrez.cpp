@@ -6,6 +6,7 @@ LogicaAjedrez::LogicaAjedrez(void)
 {
 	pieza = 0;
 	turno = BLANCAS;
+	Pieza.punteroTablero = &tableroAjedrez;
 }
 
 
@@ -21,6 +22,7 @@ void LogicaAjedrez::dirigirPuntero (struct jugada* jugadaActual)
 	{
 		case PEON_SIN_MOVER: 
 			pieza = &peon;
+			//Clase Peon (peon no movido) hereda de PeonMovido2, que a su vez hereda de pieza
 			break;
 		case PEON_MOVIDO: 
 			pieza = &peonMovido2;
@@ -42,6 +44,7 @@ void LogicaAjedrez::dirigirPuntero (struct jugada* jugadaActual)
 			break;
 		case REY_NO_MOVIDO: 
 			pieza = &rey;
+			//Clase Rey (rey no movido) hereda de ReyMovido, que a su vez hereda de pieza
 			break;
 		case REY_MOVIDO: 
 			pieza = &reyMovido;
@@ -53,7 +56,7 @@ void LogicaAjedrez::dirigirPuntero (struct jugada* jugadaActual)
 	}
 }
 
-int LogicaAjedrez::leerCasilla (struct casilla * casilla)
+int LogicaAjedrez::leerCasilla (struct Casilla * casilla)
 {
 	return tableroAjedrez.tablero[(*casilla).x][(*casilla).y];
 }

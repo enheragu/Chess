@@ -18,7 +18,7 @@ int Rey::setTipo (int turno)
 
 bool Rey::mover (struct jugada * jugadaActual)
 {
-	int error;
+	bool error;
 	/*
 	==== Restriccion propia de cada pieza ====
 	*/

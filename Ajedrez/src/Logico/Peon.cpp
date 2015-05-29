@@ -18,7 +18,7 @@ int Peon::setTipo (int turno)
 
 bool Peon::mover (struct jugada * jugadaActual)
 {
-	int error;
+	bool error;
 	/*
 	==== Restriccion propia de cada pieza ====
 	*/

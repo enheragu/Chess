@@ -3,7 +3,6 @@
 
 Pieza::Pieza(void)
 {
-	punteroTablero = &LogicaAjedrez::tableroAjedrez;
 }
 
 
@@ -13,10 +12,10 @@ Pieza::~Pieza(void)
 
 bool Pieza::mover (struct jugada * jugada)
 {
-	int piezaDestino = LogicaAjedrez::leerCasilla (&(*jugada).destino);
+	int piezaDestino = leerCasilla (&(*jugada).destino);
 
 	//si en destino no hay pieza, o hay pieza enemiga, Y no hay colision sobreescribe y coloca la propia pieza
-	if ((piezaDestino == 0 || ((piezaDestino/piezaDestino) != LogicaAjedrez::getTurno())) && (comprobarColision(&(*jugada)))) 
+	if ((piezaDestino == 0 || ((piezaDestino/piezaDestino) != getTurno())) && (comprobarColision(&(*jugada)))) 
 	{
 		sobreescribirPosicion (&(*jugada));
 		return 1;
@@ -29,8 +28,16 @@ bool Pieza::mover (struct jugada * jugada)
 
 void Pieza::sobreescribirPosicion (struct jugada * jugadaActual)
 {
-	(*punteroTablero).tablero[(*jugadaActual).destino.x][(*jugadaActual).destino.y] = (*this).setTipo(LogicaAjedrez::getTurno());
+	(*punteroTablero).tablero[(*jugadaActual).destino.x][(*jugadaActual).destino.y] = (*this).setTipo(getTurno());
 	(*punteroTablero).tablero[(*jugadaActual).origen.x][(*jugadaActual).origen.y]=0;
+
+	/****************************************************************************************
+											ERROR!
+	*****************************************************************************************
+
+	en [(*jugadaActual) señala el primer parentesis diciendo que la expresion debe tener un tipo integral o enum
+
+	*/
 }
 
 bool Pieza::comprobarColision (struct jugada * jugadaActual)
@@ -45,7 +52,7 @@ bool Pieza::comprobarColision (struct jugada * jugadaActual)
 	{
 		int index=1;
 		aux = (*jugadaActual).origen + aux2*index;
-		piezaCasilla = LogicaAjedrez::leerCasilla (&aux);
+		piezaCasilla = leerCasilla (&aux);
 		if (piezaCasilla != 0)
 			return 0;
 		index++;

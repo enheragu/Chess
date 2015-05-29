@@ -18,7 +18,7 @@ int Dama::setTipo (int turno)
 
 bool Dama::mover (struct jugada * jugadaActual)
 {
-	int error;
+	bool error;
 
 	Casilla aux2, aux =  (*jugadaActual).destino - (*jugadaActual).origen;
 	aux2 = aux.unitario();
