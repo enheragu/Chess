@@ -18,11 +18,9 @@ We codificate the chessboard in a 8x8 matrix whose cells will contain and intege
 	
 (There are some of the pieces wich are codificated with two numbers, this happends to allow some special moves as Castling, En passant, etc.)
 	
-We are sorry because the project itself is written in spanish as it is for UPM (Universidad Politecnica de Madrid). Anyway we hope anyone can understand the code.
+We are sorry because the project itself is written in spanish as it is for a university work for UPM (Universidad Politecnica de Madrid). Anyway we hope anyone can understand the code.
 
-We use openGl to produce the graphics (glut.h library). Our intention is to separate the logic part of the game from the graphics so it is easy to change the graphic interface from ours to another.
-
-Note: As it is a group project we are updating the code constantly, sometimes the changes are quite insignificant.
+We use openGl to produce the graphics (glut.h library). Our intention is to separate the logic part of the game from the graphics so it is easy to change the graphic interface from ours to another. The function that goes as interface between logic and graphics is in "LogicaAjedrez.cpp" and it's named "jugadaAjedrez()", it just need the origin and destination coordinates in a struc (syntax specified in the code).
 
 Work done by Enrique Heredia Aguado and Pilar López Ruescas
 	
