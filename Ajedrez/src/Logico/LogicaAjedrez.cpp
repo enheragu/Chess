@@ -34,6 +34,24 @@ bool LogicaAjedrez::jugadaAjedrez (struct jugada &jugadaActual)
 	return error;
 }
 
+/*
+struct needed by the function:
+	 struct jugada{
+		 Casilla origen;
+		 Casilla destino; 
+	 };
+	
+Class "Casilla" used in the structure 
+	class Casilla
+	{
+	public:
+		int x;
+		int y;
+		
+		// --- operators ---
+	};
+
+*/
 
 
 /**************************************************************************
