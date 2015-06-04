@@ -2,7 +2,7 @@
 #include <math.h>
 
 /**************************************************************************
- *					  	  Constructor/Destructor						  *
+ *			  Constructor/Destructor			  *
  **************************************************************************/
 LogicaAjedrez::LogicaAjedrez(void)
 {
@@ -18,7 +18,7 @@ LogicaAjedrez::~LogicaAjedrez(void)
 
 
 /**************************************************************************
- *					Interfaz de la lógica del ajedrez					  *
+ *		Interfaz de la lÃ³gica del ajedrez			  *
  **************************************************************************/
 
 bool LogicaAjedrez::jugadaAjedrez (struct jugada &jugadaActual)
@@ -36,7 +36,7 @@ bool LogicaAjedrez::jugadaAjedrez (struct jugada &jugadaActual)
 
 
 /**************************************************************************
- *						Funciones lógica ajedrez						  *
+ *			Funciones lÃ³gica ajedrez			  *
  **************************************************************************/
 bool LogicaAjedrez::dirigirPuntero (struct jugada & jugadaActual)
 {
