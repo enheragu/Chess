@@ -6,7 +6,7 @@ We codificate the chessboard in a 8x8 matrix whose cells will contain and intege
 	     Blancas			   Pieza		Negras
 		0			Empty cell  	  	   0
 		1			Non moved pawn		  -1
-		2			Moved pawn      	  -2   (2 cells	forward)
+		2			Moved pawn      	  -2   
 		3			Knights				  -3
 		4			Bishops			  	  -4
 		5			Non moved rooks		  -5
