@@ -35,6 +35,8 @@ bool LogicaAjedrez::jugadaAjedrez (struct jugada &jugadaActual)
 }
 
 /*
+--------------		Sintaxyx Summary		--------------		
+
 struct needed by the function:
 	 struct jugada{
 		 Casilla origen;
