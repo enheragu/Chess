@@ -8,7 +8,7 @@ public:
 	Dama(void);
 	virtual ~Dama(void);
 
-	bool mover (struct jugada*);
+	bool mover (struct jugada&);
 	int setTipo (int turno);
 };
 

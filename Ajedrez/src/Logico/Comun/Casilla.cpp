@@ -13,6 +13,10 @@ Casilla::~Casilla(void)
 {
 }
 
+/**************************************************************************
+ *					  	  Operadores de Casilla							  *
+ **************************************************************************/
+
 Casilla Casilla::operator + (Casilla op)
 {
 	Casilla resultado; 
@@ -81,4 +85,12 @@ bool Casilla:: operator != (Casilla op)
 	if ((x=op.x) && (y=op.y))
 		return 0;
 	else return 1;
+}
+
+Casilla Casilla::valAbsoluto()
+{
+	Casilla absoluto;
+	absoluto.x = abs((*this).x);
+	absoluto.y = abs((*this).y);
+	return absoluto;
 }

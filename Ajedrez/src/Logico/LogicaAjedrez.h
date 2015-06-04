@@ -9,20 +9,17 @@
 #include "Peon.h"
 #include "Rey.h"
 #include "Torre.h"
-#include "PeonMovido2.h"
-#include "ReyMovido.h"
 
 class LogicaAjedrez
 {
-public:
+private:
 	LogicaAjedrez(void);
 	~LogicaAjedrez(void);
-	void dirigirPuntero (struct jugada*);
-	int leerCasilla (struct Casilla *);
+	bool dirigirPuntero (struct jugada&);
+	int leerCasilla (Casilla &);
 
 	int getTurno();
 
-	//¿Privadas?
 	int turno; //BLANCAS o NEGRAS
 	Pieza *pieza;
 
@@ -33,10 +30,11 @@ public:
 	Alfil alfil;
 	Rey rey;
 	Dama dama;
-	PeonMovido2 peonMovido2;
-	ReyMovido reyMovido;
 
-	friend int Pieza::leerCasilla(struct Casilla *);
+public:
+	friend int Pieza::leerCasilla (Casilla &);
 	friend int Pieza::getTurno();
+
+	bool jugadaAjedrez (struct jugada &);
 };
 

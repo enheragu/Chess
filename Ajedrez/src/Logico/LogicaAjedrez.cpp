@@ -1,7 +1,9 @@
 #include "LogicaAjedrez.h"
 #include <math.h>
 
-
+/**************************************************************************
+ *					  	  Constructor/Destructor						  *
+ **************************************************************************/
 LogicaAjedrez::LogicaAjedrez(void)
 {
 	pieza = 0;
@@ -14,18 +16,39 @@ LogicaAjedrez::~LogicaAjedrez(void)
 {
 }
 
-void LogicaAjedrez::dirigirPuntero (struct jugada* jugadaActual)
+
+/**************************************************************************
+ *					Interfaz de la lógica del ajedrez					  *
+ **************************************************************************/
+
+bool LogicaAjedrez::jugadaAjedrez (struct jugada &jugadaActual)
 {
-	int piezaEnCasilla = abs(leerCasilla (&(*jugadaActual).origen));
+	bool error;
+	error = dirigirPuntero ( jugadaActual );
+
+	if (error == 1 && turno == BLANCAS)
+		turno == NEGRAS;
+	else if (error == 1 && turno == NEGRAS)
+		turno == BLANCAS;
+	return error;
+}
+
+
+
+/**************************************************************************
+ *						Funciones lógica ajedrez						  *
+ **************************************************************************/
+bool LogicaAjedrez::dirigirPuntero (struct jugada & jugadaActual)
+{
+	int piezaEnCasilla = abs(leerCasilla (jugadaActual.origen));
 
 	switch (piezaEnCasilla)
 	{
 		case PEON_SIN_MOVER: 
 			pieza = &peon;
-			//Clase Peon (peon no movido) hereda de PeonMovido2, que a su vez hereda de pieza
 			break;
 		case PEON_MOVIDO: 
-			pieza = &peonMovido2;
+			pieza = &peon;
 			break;
 		case CABALLO: 
 			pieza = &caballo;
@@ -44,21 +67,23 @@ void LogicaAjedrez::dirigirPuntero (struct jugada* jugadaActual)
 			break;
 		case REY_NO_MOVIDO: 
 			pieza = &rey;
-			//Clase Rey (rey no movido) hereda de ReyMovido, que a su vez hereda de pieza
 			break;
 		case REY_MOVIDO: 
-			pieza = &reyMovido;
+			pieza = &rey;
 			break;
 		case C_VACIA: 
 			pieza = 0;
 			//devuelve mensaje de error "casilla vacia" por pantalla
 			break;
 	}
+	if (pieza != 0)
+		if (pieza->mover(jugadaActual)) return 0; 
+		// devuelve 0 si hay error en el movimiento
 }
 
-int LogicaAjedrez::leerCasilla (struct Casilla * casilla)
+int LogicaAjedrez::leerCasilla (Casilla & casilla)
 {
-	return tableroAjedrez.tablero[(*casilla).x][(*casilla).y];
+	return tableroAjedrez.tablero[casilla.x][casilla.y];
 }
 
 int LogicaAjedrez::getTurno () 

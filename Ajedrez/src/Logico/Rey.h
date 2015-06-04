@@ -2,13 +2,13 @@
 
 #include "Pieza.h"
 
-class Rey : public ReyMovido
+class Rey : public Pieza
 {
 public:
 	Rey(void);
 	virtual ~Rey(void);
 
-	bool mover (struct jugada*);
+	bool mover (struct jugada&);
 	int setTipo (int turno);
 };
 

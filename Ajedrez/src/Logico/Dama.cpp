@@ -11,20 +11,25 @@ Dama::~Dama(void)
 {
 }
 
+/**************************************************************************
+ *					  	  Comportamiento Dama							  *
+ **************************************************************************/
+
 int Dama::setTipo (int turno)
 {
 	return DAMA*turno;
 }
 
-bool Dama::mover (struct jugada * jugadaActual)
+bool Dama::mover (struct jugada & jugadaActual)
 {
 	bool error;
 
-	Casilla aux2, aux =  (*jugadaActual).destino - (*jugadaActual).origen;
+
+	Casilla aux2, aux =  jugadaActual.destino - jugadaActual.origen;
 	aux2 = aux.unitario();
 
 	if ( abs(aux2.x)==1 || abs(aux2.y)==1 || aux.x==0 || aux.y==0)
-		error = Pieza::mover(  &(*jugadaActual)  );
+		error = Pieza::mover(  jugadaActual  );
 
 	return error;
 }

@@ -1,10 +1,10 @@
 #pragma once
+
 class Casilla
 {
 public:
-
-	float x; //no merece la pena ponerlo privado ya que el valor va a ser
-	float y; //valido siempre valga cuanto valga
+	int x;
+	int y;
 
 	Casilla (float xv=0.0f,float yv=0.0f);
 	~Casilla(void);
@@ -19,5 +19,6 @@ public:
 	Casilla operator *(float); // producto por un escalar
 	Casilla operator / (float);
 	bool operator != (Casilla op);
+	Casilla valAbsoluto();
 };
 

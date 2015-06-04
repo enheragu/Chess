@@ -8,7 +8,7 @@ public:
 	Caballo(void);
 	virtual ~Caballo(void);
 
-	bool mover (struct jugada*);
+	bool mover (struct jugada&);
 	int setTipo (int turno);
 };
 

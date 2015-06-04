@@ -8,7 +8,7 @@ public:
 	Alfil(void);
 	virtual ~Alfil(void);
 
-	bool mover (struct jugada*);
+	bool mover (struct jugada&);
 	int setTipo (int turno);
 };
 
