@@ -10,6 +10,10 @@ Pieza::~Pieza(void)
 {
 }
 
+/**************************************************************************
+ *		  Funciones comunes a las piezas			  *
+ **************************************************************************/
+
 bool Pieza::mover (struct jugada & jugada)
 {
 	int piezaDestino = leerCasilla ( jugada.destino );
