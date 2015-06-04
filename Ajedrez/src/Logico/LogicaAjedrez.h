@@ -23,7 +23,6 @@ private:
 	int turno; //BLANCAS o NEGRAS
 	Pieza *pieza;
 
-	Tablero tableroAjedrez;
 	Peon peon;
 	Torre torre;
 	Caballo caballo;
@@ -32,6 +31,8 @@ private:
 	Dama dama;
 
 public:
+	Tablero tableroAjedrez;
+	
 	friend int Pieza::leerCasilla (Casilla &);
 	friend int Pieza::getTurno();
 
