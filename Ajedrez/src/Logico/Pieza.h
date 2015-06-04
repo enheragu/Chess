@@ -13,7 +13,7 @@ enum coordenada_horizontal {A=0, B, C, D, E, F, G, H};
 
  struct jugada{
 	 Casilla origen;
-	 Casilla destino;
+	 Casilla destino; 
  };
 
 
