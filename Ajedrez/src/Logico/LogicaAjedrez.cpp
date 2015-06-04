@@ -21,6 +21,7 @@ LogicaAjedrez::~LogicaAjedrez(void)
  *		Interfaz de la lógica del ajedrez			  *
  **************************************************************************/
 
+/* En caso de movimiento correcto deovolverá un 1, si el movimiento no está permitido devolverá un 0 */
 bool LogicaAjedrez::jugadaAjedrez (struct jugada &jugadaActual)
 {
 	bool error;
