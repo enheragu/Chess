@@ -6,6 +6,9 @@ public:
 	Tablero(void);
 	virtual ~Tablero(void);
 
+	/*********************************************************************************************
+ 	 *					  Codificacion piezas				     *
+	 *********************************************************************************************/
 	/*
 	 Blancas			Pieza			  Negras
 		0			Casilla vacia			0
@@ -20,7 +23,7 @@ public:
 		9			Rey movido				-9
 	*/
 
-//Representación de la posición de las piezas de cada jugador
+//RepresentaciÃ³n de la posiciÃ³n de las piezas de cada jugador
 	int tablero[8][8];
 };
 
