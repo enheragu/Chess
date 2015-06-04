@@ -13,7 +13,7 @@ Caballo::~Caballo(void)
 
 
 /**************************************************************************
- *					  	  Comportamiento Caballo						  *
+ *		  	  Comportamiento Caballo			  *
  **************************************************************************/
 
 int Caballo::setTipo (int turno)
