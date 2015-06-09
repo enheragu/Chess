@@ -9,7 +9,7 @@
 #include "Peon.h"
 #include "Rey.h"
 #include "Torre.h"
-
+class Pieza;
 class LogicaAjedrez
 {
 private:
@@ -32,12 +32,6 @@ private:
 
 public:
 	Tablero tableroAjedrez;
-<<<<<<< HEAD
-=======
-	
-	friend int Pieza::leerCasilla (Casilla &);
-	friend int Pieza::getTurno();
->>>>>>> origin/master
 
 	bool jugadaAjedrez (struct jugada &);
 	static int getTurno();

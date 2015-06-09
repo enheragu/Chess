@@ -31,7 +31,7 @@ public:
 	void escribirPosicion (Casilla & , int);
 	//devuelve un 1 si no hay colision y un 0 si hay alguna pieza
 	bool comprobarColision (struct jugada &);
-	virtual int setTipo (int turno);
+	virtual int setTipo (int turno){return 0;}
 	int leerCasilla (Casilla &);
 
 	jugada jugadaPieza;

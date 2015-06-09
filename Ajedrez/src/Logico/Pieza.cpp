@@ -1,5 +1,6 @@
 #include "Pieza.h"
 #include "Tablero.h"
+#include "LogicaAjedrez.h"
 
 Tablero * Pieza::punteroTablero=0;
 
@@ -15,14 +16,13 @@ Pieza::~Pieza(void)
 /**************************************************************************
  *		  Funciones comunes a las piezas			  *
  **************************************************************************/
-class LogicaAjedrez;
 
 bool Pieza::mover (struct jugada & jugada)
 {
 	int piezaDestino = punteroTablero->leerCasilla ( jugada.destino );
 
 	//si en destino no hay pieza, o hay pieza enemiga, Y no hay colision sobreescribe y coloca la propia pieza
-	if ((piezaDestino == 0 || ((piezaDestino/piezaDestino) != getTurno())) && (comprobarColision( jugada ))) 
+	if ((piezaDestino == 0 || ((piezaDestino/piezaDestino) != LogicaAjedrez::getTurno())) && (comprobarColision( jugada ))) 
 	{
 		sobreescribirPosicion ( jugada );
 		return 1;
@@ -30,18 +30,17 @@ bool Pieza::mover (struct jugada & jugada)
 
 	//movimiento no permitido
 	else return 0;
-		
 }
 
 void Pieza::sobreescribirPosicion (struct jugada & jugadaActual)
 {
-	(*punteroTablero).tablero[jugadaActual.destino.x][jugadaActual.destino.y] = (*this).setTipo(getTurno());
+	(*punteroTablero).tablero[jugadaActual.destino.x][jugadaActual.destino.y] = (*this).setTipo(LogicaAjedrez::getTurno());
 	(*punteroTablero).tablero[jugadaActual.origen.x][jugadaActual.origen.y]=0;
 }
 
 void Pieza::escribirPosicion (Casilla & destino, int tipo)
 {
-	(*punteroTablero).tablero[destino.x][destino.y] = tipo*(getTurno());
+	(*punteroTablero).tablero[destino.x][destino.y] = tipo*(LogicaAjedrez::getTurno());
 }
 
 bool Pieza::comprobarColision (struct jugada & jugadaActual)

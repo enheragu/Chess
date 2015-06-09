@@ -9,7 +9,6 @@ LogicaAjedrez::LogicaAjedrez(void)
 	pieza = 0;
 	turno = BLANCAS;
 	Pieza::punteroTablero = &tableroAjedrez;
-	Pieza::punteroLogica = this;
 }
 
 int LogicaAjedrez::turno=1;
