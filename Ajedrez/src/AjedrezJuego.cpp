@@ -52,8 +52,6 @@ void OnDraw(void)
 
 
 
-
-
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
 }

@@ -1,5 +1,7 @@
 #include "Pieza.h"
+#include "Tablero.h"
 
+Tablero * Pieza::punteroTablero=0;
 
 Pieza::Pieza(void)
 {
@@ -13,10 +15,11 @@ Pieza::~Pieza(void)
 /**************************************************************************
  *		  Funciones comunes a las piezas			  *
  **************************************************************************/
+class LogicaAjedrez;
 
 bool Pieza::mover (struct jugada & jugada)
 {
-	int piezaDestino = leerCasilla ( jugada.destino );
+	int piezaDestino = punteroTablero->leerCasilla ( jugada.destino );
 
 	//si en destino no hay pieza, o hay pieza enemiga, Y no hay colision sobreescribe y coloca la propia pieza
 	if ((piezaDestino == 0 || ((piezaDestino/piezaDestino) != getTurno())) && (comprobarColision( jugada ))) 
@@ -53,7 +56,7 @@ bool Pieza::comprobarColision (struct jugada & jugadaActual)
 	{
 		int index=1;
 		aux = jugadaActual.origen + aux2*index;
-		piezaCasilla = leerCasilla (aux);
+		piezaCasilla = punteroTablero->leerCasilla (aux);
 		if (piezaCasilla != 0)
 			return 0;
 		index++;
@@ -61,4 +64,7 @@ bool Pieza::comprobarColision (struct jugada & jugadaActual)
 	return 1;
 }
 
-
+int Pieza::leerCasilla (Casilla & casilla)
+{
+	return punteroTablero->leerCasilla ( casilla );
+}

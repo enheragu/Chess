@@ -23,7 +23,7 @@ int Caballo::setTipo (int turno)
 
 bool Caballo::mover (struct jugada & jugadaActual)
 {
-	bool error;
+	bool error = 0;
 	Casilla diferenciaMov;
 	/*
 	==== Restriccion propia de cada pieza ====

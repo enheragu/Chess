@@ -22,7 +22,7 @@ int Rey::setTipo (int turno)
 
 bool Rey::mover (struct jugada & jugadaActual)
 {
-	bool error;
+	bool error = 0;
 	Casilla diferenciaAbs;
 	Casilla diferenciaMov;
 	Casilla posTorre;
@@ -52,7 +52,7 @@ bool Rey::mover (struct jugada & jugadaActual)
 
 				posTorre.x = 5;
 				posTorre.y = jugadaActual.destino.y;
-				Torre::escribirPosicion(posTorre, TORRE_MOVIDA);
+				escribirPosicion(posTorre, TORRE_MOVIDA);
 
 
 		/***************************************************************
@@ -67,7 +67,7 @@ bool Rey::mover (struct jugada & jugadaActual)
 
 				posTorre.x = 3;
 				posTorre.y = jugadaActual.destino.y;
-				Torre::escribirPosicion(posTorre, TORRE_MOVIDA);
+				escribirPosicion(posTorre, TORRE_MOVIDA);
 
 	return error;
 }

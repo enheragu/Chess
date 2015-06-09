@@ -8,9 +8,11 @@ LogicaAjedrez::LogicaAjedrez(void)
 {
 	pieza = 0;
 	turno = BLANCAS;
-	Pieza.punteroTablero = &tableroAjedrez;
+	Pieza::punteroTablero = &tableroAjedrez;
+	Pieza::punteroLogica = this;
 }
 
+int LogicaAjedrez::turno=1;
 
 LogicaAjedrez::~LogicaAjedrez(void)
 {
@@ -24,13 +26,13 @@ LogicaAjedrez::~LogicaAjedrez(void)
 /* En caso de movimiento correcto deovolverá un 1, si el movimiento no está permitido devolverá un 0 */
 bool LogicaAjedrez::jugadaAjedrez (struct jugada &jugadaActual)
 {
-	bool error;
+	bool error = false;
 	error = dirigirPuntero ( jugadaActual );
 
-	if (error == 1 && turno == BLANCAS)
-		turno == NEGRAS;
-	else if (error == 1 && turno == NEGRAS)
-		turno == BLANCAS;
+	if (error == true && turno == BLANCAS)
+		turno = NEGRAS;
+	else if (error == true && turno == NEGRAS)
+		turno = BLANCAS;
 	return error;
 }
 

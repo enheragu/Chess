@@ -23,7 +23,7 @@ int Alfil::setTipo (int turno)
 
 bool Alfil::mover (struct jugada & jugadaActual)
 {
-	int error;
+	bool error = 0;
 
 	Casilla aux =  jugadaActual.destino - jugadaActual.origen;
 	aux = aux.unitario();

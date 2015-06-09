@@ -18,12 +18,11 @@ private:
 	bool dirigirPuntero (struct jugada&);
 	int leerCasilla (Casilla &);
 
-	int getTurno();
 
-	int turno; //BLANCAS o NEGRAS
+
+	static int turno; //BLANCAS o NEGRAS
 	Pieza *pieza;
 
-	Tablero tableroAjedrez;
 	Peon peon;
 	Torre torre;
 	Caballo caballo;
@@ -32,9 +31,9 @@ private:
 	Dama dama;
 
 public:
-	friend int Pieza::leerCasilla (Casilla &);
-	friend int Pieza::getTurno();
+	Tablero tableroAjedrez;
 
 	bool jugadaAjedrez (struct jugada &);
+	static int getTurno();
 };
 

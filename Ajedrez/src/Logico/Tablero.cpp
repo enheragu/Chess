@@ -1,4 +1,5 @@
 #include "Tablero.h"
+#include "Comun\Casilla.h"
 
 
 /******************************************************************************************************************
@@ -16,8 +17,23 @@ Tablero::Tablero(void)
 		}
 	}
 }
+int Tablero::leerCasilla(Casilla &c){
+  return tablero[c.x][c.y];
+}
 
 
 Tablero::~Tablero(void)
 {
+}
+
+void Tablero::reset()
+{
+	int tabAux [8][8] = { {5,3,4,8,7,4,3,5} , {1,1,1,1,1,1,1,1} , {0,0,0,0,0,0,0,0} , {0,0,0,0,0,0,0,0},
+						  {0,0,0,0,0,0,0,0} , {0,0,0,0,0,0,0,0} , {-1,-1,-1,-1,-1,-1,-1,-1} , {-5,-3,-4,-8,-7,-4,-3,-5} };
+	
+	for (int i=0; i<10; i++) {
+		for (int j=0; j<12; j++) {
+			tablero[i][j] = tabAux[i][j];
+		}
+	}
 }

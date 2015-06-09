@@ -1,5 +1,5 @@
 #pragma once
-
+class Casilla;
 class Tablero
 {
 public:
@@ -25,5 +25,7 @@ public:
 
 //Representación de la posición de las piezas de cada jugador
 	int tablero[8][8];
+	int leerCasilla(Casilla &c);
+	void reset ();
 };
 

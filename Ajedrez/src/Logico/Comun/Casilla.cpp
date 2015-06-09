@@ -35,12 +35,12 @@ Casilla Casilla::operator + (float real)
 
 float Casilla::modulo()
 {
-	return (float) sqrt(x*x+y*y);
+	return sqrt((float)(x*x+y*y));
 }
 
 float Casilla::argumento()
 {
-	return (float)atan2(y,x);
+	return atan2((float)y,(float)x);
 }
 
 Casilla Casilla::unitario()

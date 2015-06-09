@@ -22,7 +22,7 @@ int Dama::setTipo (int turno)
 
 bool Dama::mover (struct jugada & jugadaActual)
 {
-	bool error;
+	bool error = 0;
 
 
 	Casilla aux2, aux =  jugadaActual.destino - jugadaActual.origen;
