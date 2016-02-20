@@ -15,8 +15,7 @@ We codificate the chessboard in a 8x8 matrix whose cells will contain and intege
 		8			Non moved king		  -8
 		9			Moved king		  	  -9
 
-	
-(There are some of the pieces wich are codificated with two numbers, this happends to allow some special moves as Castling, En passant, etc.)
+
 	
 We are sorry because the project itself is written in spanish as it is for a university work for UPM (Universidad Politecnica de Madrid). Anyway we hope anyone can understand the code.
 
