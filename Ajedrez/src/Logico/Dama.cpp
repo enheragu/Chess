@@ -24,11 +24,9 @@ bool Dama::mover (struct jugada & jugadaActual)
 {
 	bool error = 0;
 
+	Casilla aux =  jugadaActual.destino - jugadaActual.origen;
 
-	Casilla aux2, aux =  jugadaActual.destino - jugadaActual.origen;
-	aux2 = aux.unitario();
-
-	if ( abs(aux2.x)==1 || abs(aux2.y)==1 || aux.x==0 || aux.y==0)
+	if ( abs(aux.x)==abs(aux.y) || aux.x==0 || aux.y==0)
 		error = Pieza::mover(  jugadaActual  );
 
 	return error;

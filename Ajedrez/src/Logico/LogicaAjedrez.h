@@ -13,13 +13,7 @@ class Pieza;
 class LogicaAjedrez
 {
 private:
-	LogicaAjedrez(void);
-	~LogicaAjedrez(void);
 	bool dirigirPuntero (struct jugada&);
-	int leerCasilla (Casilla &);
-
-
-
 	static int turno; //BLANCAS o NEGRAS
 	Pieza *pieza;
 
@@ -29,11 +23,18 @@ private:
 	Alfil alfil;
 	Rey rey;
 	Dama dama;
-
+	
+	bool escribirMovimiento (struct jugada &);
 public:
+	LogicaAjedrez(void);
+	~LogicaAjedrez(void);
 	Tablero tableroAjedrez;
+	void reset();
+	int leerCasilla (Casilla &);
 
 	bool jugadaAjedrez (struct jugada &);
+	Casilla jaque ();
 	static int getTurno();
+	bool jaqueRey;
 };
 

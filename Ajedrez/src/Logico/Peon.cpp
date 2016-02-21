@@ -30,10 +30,14 @@ bool Peon::mover (struct jugada &jugadaActual)
 	diferenciaMov = (jugadaActual.destino - jugadaActual.origen);
 
 				//Avanzar una casilla hacia alante			
-	if ((diferenciaMov.y == 1 && diferenciaMov.x ==0) || 
+	if (((diferenciaMov.x)/getTurno() == 1 && diferenciaMov.y ==0) || 
 				//Avanzar dos casillas hacia alante si el peon no se ha movido
-		( (diferenciaMov.y == 2 && diferenciaMov.x ==0) && abs(leerCasilla(jugadaActual.origen)) == PEON_SIN_MOVER))
+		( ((diferenciaMov.x)/getTurno() == 2 && diferenciaMov.y ==0) && abs(leerCasilla(jugadaActual.origen)) == PEON_SIN_MOVER))
 
+		error = Pieza::mover( jugadaActual );
+			
+				//Comer en diagonal
+	if ( (diferenciaMov.x/getTurno() == 1) && (diferenciaMov.y == 1 || diferenciaMov.y == -1) && (leerCasilla(jugadaActual.destino)<0?-1:1 != getTurno()) ) 
 		error = Pieza::mover( jugadaActual );
 
 	return error;

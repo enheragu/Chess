@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Comun\Casilla.h"
+#include "Logico\Comun\Casilla.h"
 
 /**********************************************************************************
  *		 Alias piezas/turnos/coordenadas para ajedrez			  *
@@ -33,6 +33,8 @@ public:
 	bool comprobarColision (struct jugada &);
 	virtual int setTipo (int turno){return 0;}
 	int leerCasilla (Casilla &);
+	int getTurno ();
+	void deshacerMovimiento (struct jugada  &);
 
 	jugada jugadaPieza;
 

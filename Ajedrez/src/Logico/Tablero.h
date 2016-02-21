@@ -2,6 +2,7 @@
 class Casilla;
 class Tablero
 {
+	static int posInicial[8][8];
 public:
 	Tablero(void);
 	virtual ~Tablero(void);

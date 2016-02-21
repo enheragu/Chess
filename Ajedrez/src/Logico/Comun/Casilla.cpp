@@ -45,14 +45,27 @@ float Casilla::argumento()
 
 Casilla Casilla::unitario()
 {
+	Casilla retorno (x,y);
+
+	if (x != 0) 
+		retorno.x = x/x;
+	else retorno.x = 0;
+
+	if (y != 0)
+		retorno.y = y/y;
+	else retorno.y = 0;
+
+	return retorno;
+	/*
 	Casilla retorno(x,y);
 	float mod=modulo();
 	if(mod>0.00001)
 	{
-		retorno.x/=mod;
-		retorno.y/=mod; 
+		retorno.x=(int)(retorno.x/mod);
+		retorno.y=(int)(retorno.y/mod);
 	} 
 	return retorno; 
+	*/
 }
 
 Casilla Casilla::operator - (Casilla op) 
@@ -62,6 +75,20 @@ Casilla Casilla::operator - (Casilla op)
 	res.y=y-op.y; 
 	return res; 
 } 
+
+Casilla Casilla::operator / (Casilla op)
+{
+	Casilla res;
+	if (op.x != 0)	
+		res.x = x/op.x;
+	else res.x = 0;
+	
+	if (op.y != 0)
+		res.y = y/op.y;
+	else res.y = 0;
+
+	return res;
+}
 
 float Casilla::operator *(Casilla v)
 {

@@ -10,5 +10,6 @@ public:
 
 	bool mover (struct jugada&);
 	int setTipo (int turno);
+	Casilla buscarRey ();
 };
 

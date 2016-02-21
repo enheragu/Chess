@@ -32,42 +32,61 @@ bool Rey::mover (struct jugada & jugadaActual)
 	diferenciaMov = (jugadaActual.destino - jugadaActual.origen);
 	diferenciaAbs = ((jugadaActual.destino - jugadaActual.origen)).valAbsoluto();
 
-			//Modulo igual a 1 o igual a raiz de dos
-	if (diferenciaAbs.modulo()==1 || diferenciaAbs.modulo() == 1.4142)
+			//O una de las componentes es 1 o ambas son 1
+	if ((diferenciaAbs.x + diferenciaAbs.y ==1)||(diferenciaAbs.x==1 && diferenciaAbs.y==1))
 		error = Pieza::mover( jugadaActual );
 			
 			//Enroque mover 2 en x, rey no movido y torre no movida
-	else if ( (diferenciaMov.y == 0 && abs(diferenciaMov.x ==2)) && (abs(leerCasilla(jugadaActual.origen)) == REY_NO_MOVIDO))
-
-
-		/***************************************************************
-		 *			   enroque corto		       *
-		 ***************************************************************/
-		posTorre.x = 7;
-		posTorre.y = jugadaActual.destino.y;
-
-		if ( (diferenciaMov.x == 2) && (abs(leerCasilla (posTorre)) == TORRE_NO_MOVIDA) )
-			error = Pieza::mover( jugadaActual );
-			if (error == 1)
-
-				posTorre.x = 5;
-				posTorre.y = jugadaActual.destino.y;
-				escribirPosicion(posTorre, TORRE_MOVIDA);
+	else if ( ((diferenciaAbs.x == 0) && abs(diferenciaMov.y ==2)) && (abs(leerCasilla(jugadaActual.origen)) == REY_NO_MOVIDO))
 
 
 		/***************************************************************
 		 *			   enroque largo		       *
 		 ***************************************************************/
-		posTorre.x = 0;
-		posTorre.y = jugadaActual.destino.y;
+		posTorre.y = 7;
+		posTorre.x = jugadaActual.destino.x;
 
-		if ( (diferenciaMov.x == -2) && (abs(leerCasilla (posTorre)) == TORRE_NO_MOVIDA) )
+		if ( (diferenciaMov.y == 2) && (abs(leerCasilla (posTorre)) == TORRE_NO_MOVIDA) )
+		{
 			error = Pieza::mover( jugadaActual );
 			if (error == 1)
-
-				posTorre.x = 3;
-				posTorre.y = jugadaActual.destino.y;
+			{
+				escribirPosicion(posTorre, C_VACIA);
+				posTorre.y = 4;
+				posTorre.x = jugadaActual.destino.x;
 				escribirPosicion(posTorre, TORRE_MOVIDA);
+			}
+		}
 
+		/***************************************************************
+		 *			   enroque corto		       *
+		 ***************************************************************/
+		posTorre.y = 0;
+		posTorre.x = jugadaActual.destino.x;
+
+		if ( (diferenciaMov.y == -2) && (abs(leerCasilla (posTorre)) == TORRE_NO_MOVIDA) )
+		{
+			error = Pieza::mover( jugadaActual );
+			if (error == 1)
+			{
+				escribirPosicion(posTorre, C_VACIA);
+				posTorre.y = 2;
+				posTorre.x = jugadaActual.destino.x;
+				escribirPosicion(posTorre, TORRE_MOVIDA);
+			}
+		}
 	return error;
 }
+
+/*
+Casilla Rey::buscarRey ()
+{
+	for (int i=0; i<8; i++)
+		for (int j=0; j<8; j++)
+		{
+			Casilla posicion (i,j);
+			if (leerCasilla (posicion) == getTurno()*REY_NO_MOVIDO || leerCasilla (posicion) ==  getTurno()*REY_MOVIDO )
+				return posicion;
+		}
+}
+*/

@@ -26,9 +26,9 @@ bool Alfil::mover (struct jugada & jugadaActual)
 	bool error = 0;
 
 	Casilla aux =  jugadaActual.destino - jugadaActual.origen;
-	aux = aux.unitario();
+	//aux = aux.unitario();
 
-	if ( abs(aux.x)==1 || abs(aux.y)==1)
+	if ( abs(aux.x)==abs(aux.y))
 		error = Pieza::mover(  jugadaActual  );
 
 	return error;

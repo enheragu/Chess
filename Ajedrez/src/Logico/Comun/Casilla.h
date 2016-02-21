@@ -19,6 +19,7 @@ public:
 	Casilla operator *(float); // producto por un escalar
 	Casilla operator / (float);
 	bool operator != (Casilla op);
+	Casilla operator / (Casilla op);
 	Casilla valAbsoluto();
 };
 
