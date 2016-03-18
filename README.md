@@ -1,5 +1,5 @@
 # Chess
-This is still work in progress. Our intention is to create a two player Chess programmed in C++ (POO structure) without using bitmaps. Our code is based in Shannon codification proposal (extended with "error" cells). This work is for an university project
+The aim of this project is to create a two player Chess programmed in C++ (POO structure) without using bitmaps. Our code is based in Shannon codification proposal (extended with "error" cells). This work is for an university project
 
 We codificate the chessboard in a 8x8 matrix whose cells will contain and integer variable (int) wich codificates what is contained in that cell. 
 
