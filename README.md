@@ -23,3 +23,10 @@ We use openGl to produce the graphics (glut.h library). Our intention is to sepa
 
 Work done by Enrique Heredia Aguado and Pilar López Ruescas
 	
+# License
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+
+<p align="center">
+<img src="by-sa.png" width="200" align = "center">
+</p>
