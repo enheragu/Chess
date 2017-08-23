@@ -22,11 +22,4 @@ We are sorry because the project itself is written in spanish as it is for a uni
 We use openGl to produce the graphics (glut.h library). Our intention is to separate the logic part of the game from the graphics so it is easy to change the graphic interface from ours to another. The function that goes as interface between logic and graphics is in "Ajedrez/src/Logico/LogicaAjedrez.cpp" and it's named "jugadaAjedrez()", it just need the origin and destination coordinates in a struc (syntax specified in the code).
 
 Work done by Enrique Heredia Aguado and Pilar López Ruescas
-	
-# License
 
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
-
-<p align="center">
-<img src="by-sa.png" width="200" align = "center">
-</p>
